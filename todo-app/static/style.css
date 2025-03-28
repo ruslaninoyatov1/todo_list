@@ -1,0 +1,116 @@
+/* Zamonaviy gradient orqa fon */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928DAB);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Konteyner */
+.container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Bugungi sana */
+.date {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff9a8b;
+    margin-bottom: 15px;
+}
+
+/* Sarlavha */
+h1 {
+    color: white;
+    font-size: 26px;
+}
+
+/* Yangi vazifa qo‘shish */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.task-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff20;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.task-form button {
+    background: #ff9a8b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.task-form button:hover {
+    background: #ff6b6b;
+}
+
+/* Vazifalar ro‘yxati */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.task-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Tugmalar */
+.btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+.complete { background: #2ecc71; }
+.edit { background: #f1c40f; }
+.delete { background: #e74c3c; }
+
+.complete:hover { background: #27ae60; }
+.edit:hover { background: #f39c12; }
+.delete:hover { background: #c0392b; }
+
+/* Bajargan ishlar */
+.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Bugungi sana -->
+    <div class="date">{{ today_date }}</div>
+
+    <div class="container">
+        <h1>📝 Vazifalar Roʻyxati</h1>
+
+        <!-- Yangi vazifa qo‘shish formasi -->
+        <form action="{{ url_for('add_task') }}" method="POST" class="task-form">
+            <input type="text" name="task_name" placeholder="Vazifa nomi..." required>
+            <input type="datetime-local" name="deadline" required>
+            <button type="submit">Qo‘shish ➕</button>
+        </form>
+
+        <!-- Vazifalar ro‘yxati -->
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="{% if task.status == '✅' %}completed{% endif %}">
+                    <span>{{ task.name }} - {{ task.deadline.strftime('%d-%m-%Y %H:%M') }}</span>
+                    <div class="btn-group">
+                        <a href="{{ url_for('complete_task', task_id=task.id) }}" class="btn complete">✅</a>
+                        <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn edit">✏</a>
+                        <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn delete">❌</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
